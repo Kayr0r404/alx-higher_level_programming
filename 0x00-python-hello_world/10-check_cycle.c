@@ -9,12 +9,12 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *curr = list;
+	listint_t *curr = list, *head = list;
 
 	while (curr != NULL)
 	{
 		curr = curr->next;
-		if (curr == list)
+		if (curr == head)
 			return (1);
 	}
 
