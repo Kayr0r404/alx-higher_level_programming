@@ -1,2 +1,13 @@
 #!/bin/bash
-python3 <<< $PYCODE
+
+# Get the Python code from the environment variable
+python_code="$PYCODE"
+
+# Check if the python_code variable is not empty
+if [ -n "$python_code" ]; then
+    # Run the Python code
+    python3 -c "$python_code"
+else
+    echo "No Python code provided in the PYCODE environment variable."
+fi
+
