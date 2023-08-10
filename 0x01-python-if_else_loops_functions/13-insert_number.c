@@ -30,9 +30,7 @@ listint_t *insert_node(listint_t **head, int number)
 
 	while (curr && fast)
 	{
-        if (curr->n ==   number || fast->n == number)
-            return (NULL);
-		if (curr->n < number && fast->n > number)
+		if (curr->n <= number && fast->n >= number)
 		{
 			curr->next = newNode;
 			newNode->next = fast;
@@ -43,7 +41,7 @@ listint_t *insert_node(listint_t **head, int number)
 		fast = fast->next;
 	}
 
-	fast->next = newNode;
+	curr->next = newNode;
 	newNode->next = NULL;
 
 	return (newNode);
