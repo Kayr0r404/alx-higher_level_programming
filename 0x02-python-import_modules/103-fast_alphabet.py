@@ -1,3 +1,3 @@
-#!/usr/bin/py
-import Alphabets
-print()
+#!/usr/bin/python3
+import string
+print("{}".format(string.ascii_uppercase))
