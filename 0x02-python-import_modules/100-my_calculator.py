@@ -11,11 +11,11 @@ if __name__ == "__main__":
     if argv[2] == '+':
         print(f"{a} + {b} = {add(a, b)}")
     elif argv[2] == '-':
-        print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+        print(f"{a} - {b} = {sub(a, b)}")
     elif argv[2] == '*':
-        print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+        print(f"{a} * {b} = {mul(a, b)}")
     elif argv[2] == '/':
-        print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+        print(f"{a} / {b} = {div(a, b)}")
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
