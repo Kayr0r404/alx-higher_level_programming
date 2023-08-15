@@ -7,8 +7,6 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *curr, *reversed, *rev;
-	int *list, *revList;
-	int i;
 
 	if (!head || !*head)
 		return (1);
@@ -17,17 +15,10 @@ int is_palindrome(listint_t **head)
 	reversed = reverse_listint(head);
 	rev = reversed;
 
-	for (i = 0; curr, rev; rev->n, curr->n)
-	{
-		*(revList +i) = rev->n;
-		*(list + i) = curr->n;
-	}
-
 	while (curr && rev)
 	{
 		if (curr->n != rev->n)
 			return (0);
-
 		curr = curr->next;
 		rev = rev->next;
 	}
