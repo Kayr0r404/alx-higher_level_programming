@@ -15,9 +15,9 @@ int is_palindrome(listint_t **head)
 	reversed = reverse_listint(head);
 	rev = reversed;
 
-	while (curr && rev)
+	while (curr)
 	{
-		if (curr->n != rev->n)
+		if (curr != rev)
 			return (0);
 
 		curr = curr->next;
