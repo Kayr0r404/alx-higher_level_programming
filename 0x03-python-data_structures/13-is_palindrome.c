@@ -18,13 +18,17 @@ int is_palindrome(listint_t **head)
 	while (curr && rev)
 	{
 		if (curr->n != rev->n)
+		{
+			curr = curr->next;
+			rev = rev->next;
+		}
+		else
 			return (0);
-		curr = curr->next;
-		rev = rev->next;
 	}
 
 	return (1);
 }
+
 /**
  * reverse_listint - a function that reverses a listint_t linked list.
  * @head: input list
