@@ -49,9 +49,9 @@ nb_print: 5
 guillaume@ubuntu:~/0x05$   
 ```
 <br>
-'''
+```
  
-'''
+```
 ### 1. Safe printing of an integers list
 ##### file: 
 <br>
@@ -67,7 +67,7 @@ Write a function that prints an integer with *"{:d}".format()*.
 * You have to use *"{:d}".format()* to print as integer  
 * You are not allowed to import any module  
 * You are not allowed to use *type()*  
-'''
+```
 guillaume@ubuntu:~/0x05$ cat 1-main.py
 #!/usr/bin/python3
 safe_print_integer = __import__('1-safe_print_integer').safe_print_integer
@@ -92,7 +92,7 @@ guillaume@ubuntu:~/0x05$ ./1-main.py
 -89
 School is not an integer
 guillaume@ubuntu:~/0x05$ 
-'''
+```
 ### 2. Print and count integers
 ##### file: 2-safe_print_list_integers.py
 
@@ -138,7 +138,7 @@ nb_print: 5
     print("{:d}".format(my_list[i]), end="")
 IndexError: list index out of range
 guillaume@ubuntu:~/0x05$ 
-'''
+```
 
 ### 3. Integers division with debug
 ##### file: 3-safe_print_division.py
@@ -152,7 +152,7 @@ Write a function that divides 2 integers and prints the result.
 * You have to use *try: / except: / finally:*  
 * You have to use *"{}".format()* to print the result   
 * You are not allowed to import any module  
-'''
+```
 guillaume@ubuntu:~/0x05$ cat 3-main.py
 #!/usr/bin/python3
 safe_print_division = __import__('3-safe_print_division').safe_print_division
@@ -173,7 +173,7 @@ Inside result: 6.0
 Inside result: None
 12 / 0 = None
 guillaume@ubuntu:~/0x05$ 
-'''
+```
 
 ### 4. Divide a list
 ##### file: 4-list_division.py
@@ -194,7 +194,7 @@ Write a function that divides element by element 2 lists.
 * You have to use *try: / except: / finally:*  
 * You are not allowed to import any module  
 
-'''
+```
 guillaume@ubuntu:~/0x05$ cat 4-main.py
 #!/usr/bin/python3
 list_division = __import__('4-list_division').list_division
@@ -219,10 +219,10 @@ wrong type
 out of range
 [5.0, 0, 0, 2.0, 0]
 guillaume@ubuntu:~/0x05$ 
-'''
+```
 ### 5. Raise exception
 ##### file: 5-raise_exception.py
-'''
+```
 guillaume@ubuntu:~/0x05$ cat 5-main.py
 #!/usr/bin/python3
 raise_exception = __import__('5-raise_exception').raise_exception
@@ -251,4 +251,4 @@ except NameError as ne:
 guillaume@ubuntu:~/0x05$ ./6-main.py
 C is fun
 guillaume@ubuntu:~/0x05$ 
-'''
+```
