@@ -219,6 +219,10 @@ guillaume@ubuntu:~/0x05$
 ```
 ### 5. Raise exception
 ##### file: 5-raise_exception.py
+Write a function that raises a type exception.   
+
+* Prototype: *def raise_exception()*:   
+* You are not allowed to import any module   
 ```
 guillaume@ubuntu:~/0x05$ cat 5-main.py
 #!/usr/bin/python3
@@ -235,6 +239,11 @@ guillaume@ubuntu:~/0x05$
 '''
 ## 6. Raise a message
 ##### file: 6-raise_exception_msg.py  
+Write a function that raises a name exception with a message.   
+
+* Prototype: *def raise_exception_msg(message=""):*   
+* You are not allowed to import any module   
+
 '''
 guillaume@ubuntu:~/0x05$ cat 6-main.py
 #!/usr/bin/python3
