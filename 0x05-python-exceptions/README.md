@@ -237,7 +237,7 @@ guillaume@ubuntu:~/0x05$ ./5-main.py
 Exception raised
 guillaume@ubuntu:~/0x05$ 
 ```
-## 6. Raise a message
+### 6. Raise a message
 ##### file: 6-raise_exception_msg.py  
 Write a function that raises a name exception with a message.   
 
@@ -259,7 +259,7 @@ C is fun
 guillaume@ubuntu:~/0x05$ 
 ```
 
-## Author
+### Author
 [Mahlare Karabo](https://github.com/Kayr0r404/monty/)
 <br>
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/karabo-mahlare/)
