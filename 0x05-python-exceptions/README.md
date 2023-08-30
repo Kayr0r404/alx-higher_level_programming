@@ -186,8 +186,8 @@ Write a function that divides element by element 2 lists.
   - print: *wrong type*  
 * If the division can’t be done (*/0*):  
   - print: *division by 0*  
-* If my_list_1 or my_list_2 is too short  
- - print: *out of range*  
+* If my_list_1 or my_list_2 is too short
+  - print: *out of range*  
 * You have to use *try: / except: / finally:*  
 * You are not allowed to import any module  
 
