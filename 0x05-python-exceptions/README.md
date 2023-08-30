@@ -49,9 +49,6 @@ nb_print: 5
 guillaume@ubuntu:~/0x05$   
 ```
 <br>
-```
- 
-```
 ### 1. Safe printing of an integers list
 ##### file: 
 <br>
@@ -108,7 +105,7 @@ Write a function that prints the first x elements of a list and only integers.
 * You have to use *"{:d}".format()* to print an integer  
 * You are not allowed to import any module  
 * You are not allowed to use len*()*  
-'''
+```
 guillaume@ubuntu:~/0x05$ cat 2-main.py
 #!/usr/bin/python3
 safe_print_list_integers = \
@@ -186,11 +183,11 @@ Write a function that divides element by element 2 lists.
 * Returns a new list (length = *list_length*) with all divisions  
 * If 2 elements can’t be divided, the division result should be equal to *0*  
 * If an element is not an integer or float:  
-* * print: *wrong type*  
+ * print: *wrong type*  
 * If the division can’t be done (*/0*):  
-* * print: *division by 0*  
+ * print: *division by 0*  
 * If my_list_1 or my_list_2 is too short  
-* * print: *out of range*  
+ * print: *out of range*  
 * You have to use *try: / except: / finally:*  
 * You are not allowed to import any module  
 
