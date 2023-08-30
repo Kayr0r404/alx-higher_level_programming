@@ -258,3 +258,8 @@ guillaume@ubuntu:~/0x05$ ./6-main.py
 C is fun
 guillaume@ubuntu:~/0x05$ 
 ```
+
+## Author
+[Mahlare Karabo](https://github.com/Kayr0r404/monty/)
+<br>
+[![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/karabo-mahlare/)
