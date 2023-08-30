@@ -236,7 +236,7 @@ except TypeError as te:
 guillaume@ubuntu:~/0x05$ ./5-main.py
 Exception raised
 guillaume@ubuntu:~/0x05$ 
-'''
+```
 ## 6. Raise a message
 ##### file: 6-raise_exception_msg.py  
 Write a function that raises a name exception with a message.   
