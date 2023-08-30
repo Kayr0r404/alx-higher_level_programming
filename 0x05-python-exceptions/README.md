@@ -12,8 +12,8 @@
  
 
 ## Tasks
-### 0. Safe list printing
-##### File: 0-safe_print_list.py
+### 0. Safe list printing  
+##### File: 0-safe_print_list.py  
 Write a function that prints *x* elements of a list.  
 
 * Prototype: *def safe_print_list(my_list=[], x=0)*:  
@@ -183,11 +183,11 @@ Write a function that divides element by element 2 lists.
 * Returns a new list (length = *list_length*) with all divisions  
 * If 2 elements can’t be divided, the division result should be equal to *0*  
 * If an element is not an integer or float:  
- * print: *wrong type*  
+  ** print: *wrong type*  
 * If the division can’t be done (*/0*):  
- * print: *division by 0*  
+  ** print: *division by 0*  
 * If my_list_1 or my_list_2 is too short  
- * print: *out of range*  
+ ** print: *out of range*  
 * You have to use *try: / except: / finally:*  
 * You are not allowed to import any module  
 
