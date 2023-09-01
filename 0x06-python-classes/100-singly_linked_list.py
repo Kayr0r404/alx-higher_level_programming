@@ -2,6 +2,7 @@
 
 
 class Node:
+    """ implementation of lisnkedlist node"""
 
     def __init__(self, data, new_node=None):
         """
@@ -15,10 +16,15 @@ class Node:
 
     @property
     def data(self):
+        """ getter method for data """
         return self._data
 
     @data.setter
     def data(self, data):
+        """"" setter method for data
+        args:
+            data: input int
+        """
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
         else:
@@ -26,17 +32,25 @@ class Node:
 
     @property
     def new_node(self):
-        return self._node
+        """ getter method for the next node"""
+        return self._next
 
     @new_node.setter
     def new_node(self, value):
+        """"" setter method for data
+        args:
+            value: input int
+        """
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         else:
-            self._node = value
+            self._next = value
 
 
 class SinglyLinkedList:
+    """
+    implemenation of linkedlist
+    """
 
     def __init__(self):
         self.head = None
@@ -66,12 +80,13 @@ class SinglyLinkedList:
             new_node.next = current.next
             current.next = new_node
 
-    def printList(self):
+    def __str__(self):
         """
-        Print the data in the list.
+        Return a string representation of the linked list.
         """
         current = self.head
+        elements = []
         while current is not None:
-            print(current.data, end=" ")
+            elements.append(str(current.data))
             current = current.next
-        print()
+        return "\n".join(elements)
