@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Handles the implementation of a node"""
 
 
 class Node:
@@ -45,6 +46,9 @@ class Node:
             raise TypeError("next_node must be a Node object")
         else:
             self._next_node = value
+
+
+"""This class mimicks a linked list"""
 
 
 class SinglyLinkedList:
