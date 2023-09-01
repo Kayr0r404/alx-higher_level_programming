@@ -12,7 +12,7 @@ class Node:
         new_node: A reference (pointer) to the next node in the linked list.
         """
         self.data = data
-        self.next = new_node
+        self.next_node = new_node
 
     @property
     def data(self):
@@ -33,7 +33,7 @@ class Node:
     @property
     def new_node(self):
         """ getter method for the next node"""
-        return self._next
+        return self._next_node
 
     @new_node.setter
     def new_node(self, value):
@@ -44,7 +44,7 @@ class Node:
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         else:
-            self._next = value
+            self._next_node = value
 
 
 class SinglyLinkedList:
@@ -68,17 +68,17 @@ class SinglyLinkedList:
             # If the new node's data is smaller than
             # or equal to the head's data,
             # insert it at the beginning
-            new_node.next = self.head
+            new_node.next_node = self.head
             self.head = new_node
         else:
             # Traverse the list to find the
             # correct position to insert the new node
             current = self.head
-            while current.next is not None and current.next.data < data:
-                current = current.next
+            while current.next_node is not None and current.next_node.data < data:
+                current = current.next_node
             # Insert the new node after the current node
-            new_node.next = current.next
-            current.next = new_node
+            new_node.next_node = current.next_node
+            current.next_node = new_node
 
     def __str__(self):
         """
@@ -88,5 +88,5 @@ class SinglyLinkedList:
         elements = []
         while current is not None:
             elements.append(str(current.data))
-            current = current.next
+            current = current.next_node
         return "\n".join(elements)
