@@ -78,7 +78,8 @@ class SinglyLinkedList:
             # Traverse the list to find the
             # correct position to insert the new node
             current = self.head
-            while current.next_node is not None and current.next_node.data < data:
+            while current.next_node is not None and \
+                    current.next_node.data < data:
                 current = current.next_node
             # Insert the new node after the current node
             new_node.next_node = current.next_node
@@ -94,3 +95,4 @@ class SinglyLinkedList:
             elements.append(str(current.data))
             current = current.next_node
         return "\n".join(elements)
+
