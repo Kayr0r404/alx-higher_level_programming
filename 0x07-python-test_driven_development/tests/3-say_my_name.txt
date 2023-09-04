@@ -1,0 +1,26 @@
+ """
+    A function that prints a name.
+
+    Args:
+    @first_name: input string (required)
+    @last_name: input string (optional, defaults to an empty string)
+
+    Examples:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+    >>> say_my_name("Alice")
+    My name is Alice
+
+    >>> say_my_name(42)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Bob", 123)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    """

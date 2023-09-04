@@ -1,23 +1,75 @@
-"""
->>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(1, 3)
-4
->>> add_integer(1, -3)
--2
->>> add_integer(2, )
-100
->>> add_integer(2)
-100
->>> add_integer(1, 'i')
-Traceback (most recent call last):
-        ...
-TypeError: b must be an integer
->>> add_integer("a", 3)
-Traceback (most recent call last):
-        ...
-TypeError: a must be an integer
->>> add_integer(3.34)
-101
+    """
+    A function that adds two integers or floats.
 
-"""
+    Arguments/parameters:
+    @a: input int/float
+    @b: input int/float (default is 98)
+
+    Returns: sum of a and b
+
+    Examples:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+    >>> add_integer(1, 3)
+    4
+
+    >>> add_integer(1, -3)
+    -2
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(1.5, 2.5)
+    4
+
+    >>> add_integer(1e10, 1e10)
+    20000000000
+
+    >>> add_integer(0.1, 0.2)
+    0
+
+    >>> add_integer(3.34)
+    101
+
+    >>> add_integer("a", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, "i")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(0, 0)
+    0
+
+    >>> add_integer(-5, 5)
+    0
+
+    >>> add_integer(0.5, 0.5)
+    1
+
+    >>> add_integer(-1.5, 1.5)
+    0
+
+    >>> add_integer(100, -100)
+    0
+
+    >>> add_integer(1.5, -0.5)
+    1
+
+    >>> add_integer(1e-10, 1e-10)
+    0
+
+    >>> add_integer(1e-10, 1e10)
+    10000000000
+
+    >>> add_integer(0.1, 0.9)
+    1
+
+    >>> add_integer(-0.1, -0.9)
+    -1
+
+    """
