@@ -2,9 +2,11 @@
 """
 contains a function that adds two integers/ floats,
 with the second parameter assigned to 98 in case the not passed
-Ath the bottom of the function we testing the function using 
+Ath the bottom of the function we testing the function using
 docstring
 """
+
+
 def add_integer(a, b=98):
     """a function that adds 2 integers.
     Arguments/parameters:
@@ -17,6 +19,7 @@ def add_integer(a, b=98):
     if not (isinstance(b, int) or isinstance(b, float)):
         raise TypeError("b must be an integer")
     return int(a + b)
+
 
 if __name__ == "__main__":
     import doctest
