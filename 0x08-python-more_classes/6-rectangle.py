@@ -6,22 +6,11 @@ two setters and two getters
 """
 
 
-#!/usr/bin/python3
-
-"""
-contains 5 methods, including the constructor,
-two setters and two getters
-"""
-
-
 class Rectangle:
     """
     implemnets the rectange
     """
-
-    """
-    implemnets the rectange
-    """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
@@ -30,14 +19,9 @@ class Rectangle:
         width: input int, that is the width of the rectangles
         height: input int, the height of the rectangle
         """
-        """
-        The constructor:
-        Args:
-        width: input int, that is the width of the rectangles
-        height: input int, the height of the rectangle
-        """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -96,6 +80,16 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 rectangle_str += '#'
-            rectangle_str += '\n'
+            if (i + 1 < self.__height):
+                rectangle_str += '\n'
 
         return rectangle_str
+
+    def __repr__(self) -> str:
+        """Returns representation of rectange as string"""
+        return (f"Rectangle({self.__width}, {self.__height})")
+
+    def __del__(self):
+        """The destructor: Deletes instance"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")

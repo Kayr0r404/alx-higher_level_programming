@@ -10,6 +10,7 @@ class Rectangle:
     """
     implemnets the rectange
     """
+
     def __init__(self, width=0, height=0):
         """
         The constructor:
