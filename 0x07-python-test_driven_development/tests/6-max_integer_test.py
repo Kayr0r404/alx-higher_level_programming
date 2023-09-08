@@ -18,6 +18,16 @@ class test_max_integer(unittest.TestCase):
         results = max_integer([1])
         self.assertEqual(results, 1)
 
+    def test_mixed_int(self):
+        """Test one element"""
+        results = max_integer([1, 4, -6, 90, -4000, 0])
+        self.assertEqual(results, 90)
+
+    def test_same_elements(self):
+        """Test one element"""
+        results = max_integer([1, 1, 1, 1, 1, 1])
+        self.assertEqual(results, 1)
+
     def test_main(self):
         """Test long list random avalues"""
         # Smallest integer
