@@ -11,23 +11,29 @@ def matrix_divided(matrix, div):
     """
     size = len(matrix[0])
 
-    for i in range(len(matrix)):
-        if (len(matrix[i]) != size):
+    for i in matrix:
+        if not (isinstance(i, list)):
+            raise TypeError("matrix must be a matrix (list of lists) \
+                            of integers/floats")
+        elif (len(i) != size):
             raise TypeError("Each row of the matrix must have the same size")
-        for j in matrix[i]:
-            if not (isinstance(j, int) or isinstance(j, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        for num in i:
+            if not (isinstance(num, (int, float))):
+                raise TypeError("matrix must be a matrix (list of lists) \
+                                of integers/floats")
+
     if not (isinstance(div, int) or isinstance(div, float)):
         raise TypeError("div must be a number")
     if (div == 0):
         raise ZeroDivisionError("division by zero")
-    list = []
+    li = []
     for i in range(len(matrix)):
         new_list = []
         for j in matrix[i]:
             new_list.append(round(j / div, 2))
-        list.append(new_list)
-    return (list)
+        li.append(new_list)
+    return (li)
+
 
 if __name__ == "__main__":
     import doctest
