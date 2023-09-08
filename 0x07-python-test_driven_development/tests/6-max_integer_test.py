@@ -23,6 +23,12 @@ class test_max_integer(unittest.TestCase):
         self.assertIsNone(max_integer([None]), None)
         self.assertIsNone(max_integer(), None)
 
+    def test_instences(self):
+        with self.assertRaises(TypeError):
+            max_integer({6, 1, 10, 900, 9})
+        with self.assertRaises(TypeError):
+            max_integer({6.0, 0.9}, {0, -19, 34})
+
     def test_one_element(self):
         """Test one element"""
         results = max_integer([1])
