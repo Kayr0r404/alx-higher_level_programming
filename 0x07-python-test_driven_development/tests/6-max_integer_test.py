@@ -7,6 +7,13 @@ max_integer = __import__("6-max_integer").max_integer
 
 class test_max_integer(unittest.TestCase):
     "Test class fo the max_integer function"
+    def test_docmodule_string(self):
+        moduleDoc = __import__('6-max_integer').__doc__
+        self.assertTrue(len(moduleDoc) > 1)
+    
+    def test_docfunction_string(self):
+        functionDoc = __import__('6-max_integer').max_integer.__doc__
+        self.assertTrue(len(functionDoc) > 1)
 
     def test_empty_list(self):
         """Test empty list"""
