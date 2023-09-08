@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def matrix_mul(m_a, m_b):
     """
     Multiplies two matrices.
@@ -69,8 +70,6 @@ def matrix_mul(m_a, m_b):
 
     return (result)
 
-
-# print(matrix_mul([1, 2], [3, 4]))
 
 if __name__ == "__main__":
     import doctest
