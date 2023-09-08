@@ -13,4 +13,5 @@ TypeError: text must be a string
 >>> text("Mahlare Karabo")
 Mahlare Karabo
 
->>> text("")
+>>> text("  ")
+  
