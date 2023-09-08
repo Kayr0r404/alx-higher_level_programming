@@ -19,6 +19,9 @@ class test_max_integer(unittest.TestCase):
         """Test empty list"""
         results = max_integer([])
         self.assertIsNone(results)
+        self.assertIsNone(max_integer([]), None)
+        self.assertIsNone(max_integer([None]), None)
+        self.assertIsNone(max_integer(), None)
 
     def test_one_element(self):
         """Test one element"""
@@ -29,6 +32,9 @@ class test_max_integer(unittest.TestCase):
         """Test one element"""
         results = max_integer([1, 4, -6, 90, -4000, 0])
         self.assertEqual(results, 90)
+    
+    def test_strings_lists(self):
+        self.assertEqual(max_integer(['q', 'w', 'e', 'r', 't', 'y']), 'y')
 
     def test_same_elements(self):
         """Test one element"""
