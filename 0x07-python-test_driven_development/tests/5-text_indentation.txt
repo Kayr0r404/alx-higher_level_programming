@@ -1,39 +1,14 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text = __import__("5-text_indentation").text_indentation
 
->>> text_indentation("""Once upon a time, There was a kid named tim. \
-... TIM WHO? you might ask, obviously its tim kook. \
-... in short: kook grow up to be an ambesious businessman. now he runs, Apple""")
-Once upon a time, There was a kid named tim.
+>>> text("Karabo: Mahlare")
+Karabo:
 <BLANKLINE>
-TIM WHO?
-<BLANKLINE>
-you might ask, obviously its tim kook.
-<BLANKLINE>
-in short:
-<BLANKLINE>
-kook grow up to be an ambesious businessman.
-<BLANKLINE>
-now he runs, Apple
->>> text_indentation("   6 9.     6 9?      6 9:     6 9     ")
-6 9.
-<BLANKLINE>
-6 9?
-<BLANKLINE>
-6 9:
-<BLANKLINE>
-6 9
->>> text_indentation("    ")
->>> text_indentation("s.a 100092 PB box, Monaco")
-s.
-<BLANKLINE>
-a 100092 PB box, Monaco
->>> text_indentation(-69)
+Mahlare
+
+>>> text(5)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
->>> text_indentation("      nani      ")
-nani
->>> text_indentation("   MoshiMoshi     \n     .     ")
-MoshiMoshi
-.
-<BLANKLINE>
+
+>>> text("Mahlare Karabo")
+Mahlare Karabo
