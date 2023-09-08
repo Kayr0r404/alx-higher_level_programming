@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Implementation"""
 
 
 def text_indentation(text):
@@ -16,6 +17,7 @@ def text_indentation(text):
             print(new_text.lstrip())
             print()
             new_text = ""
+    print(new_text.lstrip(), end='')
 
 
 if __name__ == "__main__":
