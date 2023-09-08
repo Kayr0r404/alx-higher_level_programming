@@ -9,18 +9,19 @@ def matrix_divided(matrix, div):
     Return: a new matrix whose entries are the result of dividing the
     entries of matrix by div
     """
-    size = len(matrix[0])
     comment_1 = "matrix must be a matrix (list of lists)"
     comment_2 = " of integers/floats"
-
-    for i in matrix:
-        if not (isinstance(i, list)):
-            raise TypeError(comment_1 + comment_2)
-        elif (len(i) != size):
-            raise TypeError("Each row of the matrix must have the same size")
-        for num in i:
-            if not (isinstance(num, (int, float))):
+    if ( not isinstance(matrix, list) or len(matrix) == 0):
+        raise TypeError(comment_1 + comment_2)
+    else:
+        for i in matrix:
+            if (not isinstance(i, list) or len(i) == 0):
                 raise TypeError(comment_1 + comment_2)
+            elif (len(i) != len(matrix[0])):
+                raise TypeError("Each row of the matrix must have the same size")
+            for num in i:
+                if not (isinstance(num, (int, float))):
+                    raise TypeError(comment_1 + comment_2)
 
     if not (isinstance(div, int) or isinstance(div, float)):
         raise TypeError("div must be a number")
