@@ -10,4 +10,6 @@ Traceback (most recent call last):
 ...
 ValueError: side_length must be greater than 0
 
->>>
+>>> base_geometry_class.integer_validator("int", 9)
+>>> base_geometry_class.integer_validator()
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
