@@ -1,21 +1,22 @@
->>> module = __import__("7-base_geometry")
->>> base_geometry_class = module.BaseGeometry()
->>> base_geometry_class.integer_validator("side_length", "10")
+>>> integer_validator = __import__("7-base_geometry").BaseGeometry().integer_validator
+>>> integer_validator("side_length", "10")
 Traceback (most recent call last):
 ...
 TypeError: side_length must be an integer
         
->>> base_geometry_class.integer_validator("side_length", -3)
+>>> integer_validator("side_length", -3)
 Traceback (most recent call last):
 ...
 ValueError: side_length must be greater than 0
 
->>> base_geometry_class.integer_validator("int", 9)
->>> base_geometry_class.integer_validator()
+>>> integer_validator("int", 9)
+>>> integer_validator()
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> base_geometry_class.area()
+>>> area = __import__('7-base_geometry').BaseGeometry().area
+>>> area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
+>>>
