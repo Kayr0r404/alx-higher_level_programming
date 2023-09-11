@@ -12,4 +12,10 @@ ValueError: side_length must be greater than 0
 
 >>> base_geometry_class.integer_validator("int", 9)
 >>> base_geometry_class.integer_validator()
+Traceback (most recent call last):
+...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> base_geometry_class.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
