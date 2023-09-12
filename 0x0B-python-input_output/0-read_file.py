@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""IMPLEMETATION"""
+"""Implemantation"""
+
 
 def read_file(filename=""):
-	"""Reads the files contents and print to the stdou"""
-	with open(filename) as file:
-		print(file.rstrip())
+    """reads file contents and ptint to the stdout"""
+    with open(filename, encoding='utf-8') as file:
+        print(file.rstrip())
