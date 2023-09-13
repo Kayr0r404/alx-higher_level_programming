@@ -1,0 +1,21 @@
+"""
+Test cases for MyList class
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([3, 1, 2, 4])
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+
+>>> empty_list = MyList([])
+>>> empty_list.print_sorted()
+[]
+
+>>> string_list = MyList(['apple', 'banana', 'cherry'])
+>>> string_list.print_sorted()
+['apple', 'banana', 'cherry']
+
+>>> negative_numbers = MyList([-3, -1, -2, -4])
+>>> negative_numbers.print_sorted()
+[-4, -3, -2, -1]
+
+"""
