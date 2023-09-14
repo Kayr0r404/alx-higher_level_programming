@@ -19,6 +19,5 @@ class Student:
 
     def reload_from_json(self, json):
         """reset attributes"""
-        data = json.load(json)
-        for key, val in data.items():
+        for key, val in json.items():
             setattr(self, key, val)
