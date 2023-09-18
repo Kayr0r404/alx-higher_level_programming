@@ -91,7 +91,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
         if len(args) != 0:
-            list = ["self.id", 'self.width', 'self.height', "self.x", "self.y"]
+            list = ["id", "width", 'height', "x", "y"]
             for val, name in zip(args, list):
                 setattr(self, name, val)
         else:
