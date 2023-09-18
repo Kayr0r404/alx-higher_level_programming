@@ -1,7 +1,7 @@
 import unittest
 from models.square import Square
 
-class TestBase(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     pass
 
 if __name__ == "__main__":
