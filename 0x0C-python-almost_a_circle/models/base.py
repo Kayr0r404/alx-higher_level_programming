@@ -64,4 +64,5 @@ class Base:
         """
         Returns an instance with all attributes already set
         """
-        tuple = tuple(val for (key, val) in dictionary.items())
+        # tuple = tuple(val for (key, val) in dictionary.items())
+        pass
