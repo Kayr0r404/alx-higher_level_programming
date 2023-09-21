@@ -56,7 +56,7 @@ class Base:
         json_string i a string representing a list of dictionaries
         if the string is None or empty, return an empty list
         """
-        if json_string is None or len(json_string) == 0:
+        if json_string is None or json_string == '[]':
             return []
         return json.loads(json_string)
 
@@ -86,7 +86,7 @@ class Base:
         # data = cls.from_json_string(filename)
         try:
             with open(file=filename, mode='r', encoding='utf-8') as f:
-                data = cls.from_json_string(f)
-        except FileNotFoundError:
+                data = cls.from_json_string(f.read())
+            return [cls.create(**instance) for instance in data]
+        except IOError:
             return []
-        return [cls.create(instance) for instance in data]
