@@ -52,17 +52,41 @@ class Base:
     def from_json_string(json_string):
         """
         the mothod returns the list of the
-        JSON string representation json_string
-        json_string i a string representating a list of dictionaries
+        JSON string representation
+        json_string i a string representing a list of dictionaries
         if the string is None or empty, return an empty list
         """
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """
+        Args:
+            dictionary:
         Returns an instance with all attributes already set
         """
-        # tuple = tuple(val for (key, val) in dictionary.items())
-        pass
+        if cls.__name__ == "Rectangle":
+            new_instance = cls(1, 1)  # Default values for Rectangle
+        elif cls.__name__ == "Square":
+            new_instance = cls(1)     # Default value for Square
+        else:
+            new_instance = cls()      # Default value for other classes
+
+        new_instance.update(**dictionary)
+        return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+         Returns a list of instances:
+        """
+        filename = cls.__name__ + '.json'
+        # data = cls.from_json_string(filename)
+        try:
+            with open(file=filename, mode='r', encoding='utf-8') as f:
+                data = cls.from_json_string(f)
+        except:
+            return []
+        return [cls.create(instance) for instance in data]
