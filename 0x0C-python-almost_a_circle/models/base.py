@@ -87,6 +87,6 @@ class Base:
         try:
             with open(file=filename, mode='r', encoding='utf-8') as f:
                 data = cls.from_json_string(f)
-        except:
+        except FileNotFoundError:
             return []
         return [cls.create(instance) for instance in data]
