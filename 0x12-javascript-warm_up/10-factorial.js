@@ -1,11 +1,14 @@
 #!/usr/bin/node
 
 function factorial (a) {
-  if (a === 0) { console.log(1); } else {
-    let fact = 1;
-    for (let i = a; i > 0; i--) { fact *= i; }
-    console.log(fact);
+  if (a === 0 || isNaN(a)) {
+    return 1;
+  } else {
+    return a * factorial(a - 1);
   }
 }
 
-factorial(parseInt(process.argv[2]));
+const input = parseInt(process.argv[2]);
+const result = factorial(input);
+
+console.log(result);
