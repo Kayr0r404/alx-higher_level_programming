@@ -3,7 +3,7 @@
 if (process.argv.length <= 3) { console.log(1); } else {
   const numbers = process.argv.slice(2);
   const max = Math.max(...numbers);
-  let secondMax = process.argv[2];
+  let secondMax = -Infinity;
 
   for (let i = 0; i < process.argv.length; i++) {
     if (parseInt(process.argv[i]) === max) { continue; } else {
