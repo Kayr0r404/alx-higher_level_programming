@@ -15,4 +15,4 @@ module.exports = class Rectangle {
       console.log(line);
     }
   }
-}
+};
