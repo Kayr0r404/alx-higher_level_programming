@@ -1,3 +1,3 @@
 -- description of a table
 
-SHOW COLUMNS FROM first_table;
+SHOW create table first_table;
