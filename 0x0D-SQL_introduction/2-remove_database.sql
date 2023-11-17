@@ -1,3 +1,3 @@
 -- deletes the database
 
-drop database hbtn_0c_0;
+drop database if EXISTS hbtn_0c_0;
