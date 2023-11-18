@@ -1,23 +1,24 @@
 #!/usr/bin/python3
-'''script that lists all states from the database
+'''lists all states with a name starting with N (upper N) from the database
 Arguments:
-    mysql_username, mysql_password, and database_name'''
+    mysql_username, mysql_password and database_name'''
 
 import sys
 import MySQLdb as mysql
 
-usr, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-mydb = mysql.connect(host='localhost',
-                     user=usr,
-                     passwd=password,
-                     db=database,
-                     port=3306)
-cursor = mydb.cursor()
-query = 'SELECT * FROM states ORDER BY id ASC'
-cursor.execute(query)
-results = cursor.fetchall()  # Use fetchall() on the cursor, not on execute()
+if __name__ == '__main__':
+    usr, passwd, db, search = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    mydb = mysql.connect(host='localhost',
+                        user=usr,
+                        passwd=passwd,
+                        db=db,
+                        port=3306)
+    cursor = mydb.cursor()
+    query = 'SELECT * FROM states WHERE name LIKE %s  ORDER BY id ASC'.format(search)
+    cursor.execute(query, ('{}%'.format(search),))
+    results = cursor.fetchall()
 
-for i in results:
-    print(i)
+    for i in results:
+        print(i)
 
-mydb.close()
+    mydb.close()
