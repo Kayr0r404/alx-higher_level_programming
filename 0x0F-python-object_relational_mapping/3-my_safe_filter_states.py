@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-'''lists all states with a name starting with N (upper N) from the database
+'''takes in an argument and displays all values in the states table of db
+ where name matches the argument
 Arguments:
-    mysql_username, mysql_password and database_name'''
+    mysql_username, mysql_password, database_name and state_name_searched'''
 
 import sys
 import MySQLdb as mysql
@@ -13,7 +14,7 @@ if __name__ == '__main__':
                          passwd=passwd, db=db, port=3306)
     cursor = mydb.cursor()
     query = 'SELECT * FROM states WHERE name \
-        LIKE %s  ORDER BY id ASC'.format(search)
+        LIKE BINARY %s  ORDER BY id ASC'.format(search)
     cursor.execute(query, ('{}%'.format(search),))
     results = cursor.fetchall()
 
