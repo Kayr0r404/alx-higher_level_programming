@@ -15,10 +15,10 @@ if __name__ == '__main__':
     session = Session()
     i, n = State.id, State.name
     query = session.query(State).filter(n == sys.argv[4]).order_by(i).all()
-    
-    if  query:
+
+    if query:
         for state in query:
             print("{}".format(state.id))
     else:
-        print("Not Found")
+        print("Not found")
     session.close()
