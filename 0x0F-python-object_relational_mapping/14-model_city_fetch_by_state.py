@@ -17,6 +17,5 @@ if __name__ == '__main__':
 
     query = db_session.query(State.name, City.id, City.name).join(
         City).order_by(City.id).all()
-    print(query)
     for i in query:
         print("{}: ({}) {}".format(i[0], i[1], i[2]))
