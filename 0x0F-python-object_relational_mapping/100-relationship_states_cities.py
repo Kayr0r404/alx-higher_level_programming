@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+'''create relations'''
 
 from model_state import Base, State
 from model_city import City
