@@ -14,4 +14,4 @@ class State(Base):
                 nullable=False, primary_key=True)
     name = Column(String(128))
     cities = relationship('City', backref='state',
-                          cascade='all, delete-orphan')
+                          backref=backref("state", cascade="all"), single_parent=True)
