@@ -12,29 +12,19 @@ if __name__ == '__main__':
 
     # Corrected the engine URL format
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        usr, passwd, mydb), echo=True)
+        usr, passwd, mydb), echo=False)
 
     # Bind the engine to the Base
     Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine, expire_on_commit=False)
     session = Session()
 
-    try:
-        # Corrected the City instance creation
-        california_city = City(name='San Francisco')
-        session.add(california_city)
+    california_state = State(name='California')
+    session.add(california_state)
+    session.commit()
 
-        # Corrected the State instance creation with relationship to the City
-        california_state = State(name='California', cities=[california_city])
-        session.add(california_state)
+    california_city = City(name='San Francisco', state_id=california_state.id)
+    session.add(california_city)
+    session.commit()
 
-        session.commit()
-        # print("Successfully created the state 'California' with the city 'San Francisco'.")
-
-    except Exception as e:
-        # print(f"Error: {e}")
-        session.rollback()
-
-    finally:
-        # Close the session
-        session.close()
+    session.close()
