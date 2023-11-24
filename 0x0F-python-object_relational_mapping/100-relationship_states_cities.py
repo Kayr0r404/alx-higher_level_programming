@@ -12,11 +12,11 @@ if __name__ == '__main__':
 
     # Corrected the engine URL format
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        usr, passwd, mydb), echo=False)
+        usr, passwd, mydb), pool_pre_ping=True)
 
     # Bind the engine to the Base
     Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine, expire_on_commit=False)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     california_state = State(name='California')
