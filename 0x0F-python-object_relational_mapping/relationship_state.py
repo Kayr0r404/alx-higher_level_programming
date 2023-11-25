@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-'''first Alchemy class'''
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, backref
+"""Create state class"""
 
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
+from relationship_city import City, Base
 
 
 class State(Base):
-    '''Will document latergit add '''
+    '''
+    SQLAlchemy model representing a state.
+
+    Attributes:
+    - id: An auto-incrementing integer, the primary key.
+    - name: A string representing the name of the state.
+    - cities: A one-to-many relationship with the City class.
+    '''
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True,
-                nullable=False, primary_key=True)
-    name = Column(String(128))
-    cities = relationship('City', cascade="all, delete-orphan",
-                          backref=backref("state", cascade="all"),
-                          single_parent=True)
+    id = Column(Integer, autoincrement=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
+    cities = relationship('City',
+                          cascade="all, delete-orphan",
+                          backref="states")
