@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Implementation of Base object"""
 import json
+import csv
 
 
 class Base:
@@ -88,5 +89,42 @@ class Base:
             with open(file=filename, mode='r', encoding='utf-8') as f:
                 data = cls.from_json_string(f.read())
             return [cls.create(**instance) for instance in data]
+        except IOError:
+            return []
+        
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        if list_objs is None:
+            list_objs = []
+
+        with open(filename, 'w', newline='', encoding='utf-8') as csv_file:
+            if cls.__name__ == 'Rectangle':
+                field_names = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == 'Square':
+                field_names = ['id', 'size', 'x', 'y']
+            else:
+                field_names = []
+
+            csv_writer = csv.DictWriter(csv_file, fieldnames=field_names)
+            csv_writer.writeheader()
+
+            for obj in list_objs:
+                csv_writer.writerow(obj.to_dictionary())  # Convert instance to dictionary
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+         Returns a list of instances:
+        """
+        filename = cls.__name__ + '.csv'
+        # if cls.__name__ == 'Rectangle':
+        #     field_names = ['id', 'width', 'height', 'x', 'y']
+        # if cls.__name__ == 'Square':
+        #     field_names = ['id', 'size', 'x', 'y']
+        try:
+            with open(file=filename, mode='r', encoding='utf-8') as csv_file:
+                csv_reader = csv.DictReader(csv_file)
+                return [cls.create(**instance) for instance in csv_reader]
         except IOError:
             return []

@@ -14,7 +14,7 @@ if __name__ == '__main__':
                          passwd=passwd, db=db, port=3306)
     cursor = mydb.cursor()
     query = 'SELECT * FROM states WHERE name \
-        LIKE BINARY %s  ORDER BY id ASC'.format(search)
+        LIKE BINARY %s  ORDER BY id ASC'
     cursor.execute(query, ('{}%'.format(search),))
     results = cursor.fetchall()
 

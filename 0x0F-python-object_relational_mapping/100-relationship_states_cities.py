@@ -10,20 +10,18 @@ import sys
 if __name__ == '__main__':
     usr, passwd, mydb = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Corrected the engine URL format
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         usr, passwd, mydb), pool_pre_ping=True)
 
-    # Bind the engine to the Base
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    california_state = State(name='California')
-    session.add(california_state)
+    new_state = State(name='California')
+    session.add(new_state)
     session.commit()
 
-    california_city = City(name='San Francisco', state_id=california_state.id)
+    california_city = City(name='San Francisco', state_id=new_state.id)
     session.add(california_city)
     session.commit()
 
